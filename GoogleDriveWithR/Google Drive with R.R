@@ -6,13 +6,13 @@ library(googledrive)
 # See Files in Google Drive
 drive_find(n=5)
 
-# Download Files
+# Download Files into subdirectory "Data"
 drive_download(
   "Excel Python or R Data",
   path = file.path(getwd(), "Data", "Excel Python or R Data.csv"),
   overwrite = TRUE)
 
-# Read File into R
+# Read File into R from subdirectory "Data"
 data <- read_csv(file.path(getwd(), "Data", "Excel Python or R Data.csv"))
 
 data$CPD <- data$Spend / data$Downloads
